@@ -27,10 +27,12 @@
                 if (number % oddMultiple === 0) {
                  while (number % oddMultiple === 0) {
                      number /= oddMultiple
-                     console.log(`the multiple of ${oddMultiple} is:`, number)
+                    //  console.log(`the multiple of ${oddMultiple} is:`, number)
                  }
                 }
-                oddMultiple += 2
+                if (number > 1) {
+                    oddMultiple += 2
+                }
             }
             return oddMultiple
         };
