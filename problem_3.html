@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Largest Prime Factor</title>
+</head>
+<body>
+    <h1>Problem 3: Largest Prime Factor</h1>
+    <div class="problem_content">
+        <p>The prime factors of <b>13195</b> are <b>5, 7, 13</b> and <b>29</b>.</p>
+        <p>What is the largest prime factor of the number <b>600851475143</b>?</p>
+    <div class="answer-section">
+        <p>the answer is: <span id="answer-output"></span></p>
+    </div>   
+    <script>
+        const answerOutput = document.getElementById("answer-output");
+        let divisabilityTest = (number) => {
+            let oddMultiple = 3;
+            while (number > 1) {
+                if (number % 2 === 0) {
+                 while (number % 2 === 0) {
+                     number /= 2
+                     console.log('the multiple of 2 is:', number)
+                 }
+                }
+                if (number % oddMultiple === 0) {
+                 while (number % oddMultiple === 0) {
+                     number /= oddMultiple
+                     console.log(`the multiple of ${oddMultiple} is:`, number)
+                 }
+                }
+                oddMultiple += 2
+            }
+            return oddMultiple
+        };
+        answerOutput.innerText = divisabilityTest(600851475143);
+    </script>
+</body>
+</html>
